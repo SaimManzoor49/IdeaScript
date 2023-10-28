@@ -1,8 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import Header from '../../components/HeaderComponents/Header'
 import Headings from './_components/Headings'
 import Heros from './_components/Heros'
 import Footer from './_components/Footer'
+import { useEffect } from 'react'
+
 
 export default function Home() {
   return (

@@ -11,7 +11,7 @@ function Headings() {
         <h3 className='text-base sm:text-xl md:text-2xl font-medium'>
             IdeaScript is the connected workespace where <br /> better, faster work happens.
         </h3>
-    <Button>
+    <Button variant={'default'}>
         Enter IdeaScript 
         <span className='ms-2 mt-1'>
         <AiOutlineArrowRight size="20px" />
