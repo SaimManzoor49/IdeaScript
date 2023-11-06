@@ -3,6 +3,7 @@ import './globals.css'
 import Layout from '../components/Layout'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
+import {Toaster} from 'sonner'
 
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey='idea-script'
           > 
+          <Toaster position='bottom-center'/>
         <Layout>
         {children}
         </Layout>
