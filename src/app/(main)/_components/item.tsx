@@ -86,7 +86,7 @@ export default function Item({ label, onClick, icon: Icon, id, active, documentI
             'group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium',
             active && 'bg-primary/5 text-primary'
         )}>
-            {!!id && (<div role='button' className='h-full rounded-sm hover:bg-neutral-600 mr-1' onClick={handleExpand}>
+            {!!id && (<div role='button' className='h-full rounded-sm hover:dark:bg-neutral-600 mr-1' onClick={handleExpand}>
                 <ChavronIcon className='h-4 w-4 shrink-0 text-muted-foreground/50' />
             </div>)}
             {documentIcon ? (<div className='shrink-0 mr-2 text-[18px]'>{documentIcon}</div>) : (

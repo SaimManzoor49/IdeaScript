@@ -3,6 +3,7 @@ import './globals.css'
 import Layout from '../components/Layout'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
+import ModalProvider from '@/components/providers/modal-provider'
 import {Toaster} from 'sonner'
 
 
@@ -35,6 +36,8 @@ export default function RootLayout({
           > 
           <Toaster position='bottom-center'/>
         <Layout>
+          <ModalProvider />
+
         {children}
         </Layout>
         </ThemeProvider>

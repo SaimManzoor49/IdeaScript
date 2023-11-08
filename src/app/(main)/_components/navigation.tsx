@@ -17,6 +17,7 @@ import {
 import TrashBox from './TrashBox'
 
 import { useSearch } from '../../../../hooks/use-search'
+import { useSettings } from '../../../../hooks/use-settings'
 
 
 
@@ -33,6 +34,7 @@ export default function Navigation() {
     const [isCollasped, setIsCollasped] = useState(isMobile)
 
     const search = useSearch();
+    const settings = useSettings();
 
     useEffect(()=>{
         if(isMobile){
@@ -139,7 +141,7 @@ export default function Navigation() {
                     <Item 
                     label='Setting'
                     icon={Settings}
-                    onClick={()=>{}}
+                    onClick={settings.onOpen}
                     />
                     <Item onClick={handleCreate} label={'New page'} icon={PlusCircle}/>
                 </div>
