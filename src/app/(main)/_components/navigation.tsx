@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/popover'
 import TrashBox from './TrashBox'
 
+import { useSearch } from '../../../../hooks/use-search'
+
 
 
 export default function Navigation() {
@@ -30,6 +32,7 @@ export default function Navigation() {
     const [isResetting, setIsResetting] = useState(false)
     const [isCollasped, setIsCollasped] = useState(isMobile)
 
+    const search = useSearch();
 
     useEffect(()=>{
         if(isMobile){
@@ -131,7 +134,7 @@ export default function Navigation() {
                     label='Search'
                     icon={Search}
                     isSearch
-                    onClick={()=>{}}
+                    onClick={search.onOpen}
                     />
                     <Item 
                     label='Setting'
