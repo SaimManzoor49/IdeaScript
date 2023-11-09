@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
 import ModalProvider from '@/components/providers/modal-provider'
 import {Toaster} from 'sonner'
+import { EdgeStoreProvider } from '@/lib/edgestore'
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ConvexClientProvider>
+          <EdgeStoreProvider>
+
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -41,6 +44,7 @@ export default function RootLayout({
         {children}
         </Layout>
         </ThemeProvider>
+            </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
 
