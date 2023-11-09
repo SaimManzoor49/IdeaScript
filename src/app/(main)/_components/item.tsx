@@ -53,7 +53,7 @@ export default function Item({ label, onClick, icon: Icon, id, active, documentI
             if (!expanded) {
                 onExpand?.();
             }
-            // router.push(`/documents/${documnetId}`)
+            router.push(`/documents/${documnetId}`)
         })
 
         toast.promise(promise, {
@@ -69,7 +69,9 @@ export default function Item({ label, onClick, icon: Icon, id, active, documentI
         e.stopPropagation()
         if(!id) return;
 
-        const promise = archive({id})
+        const promise = archive({id}).then(()=>{
+            router.push('/documents')
+        })
 
         toast.promise(promise,{
             loading: 'Moving to trash...',
@@ -90,7 +92,7 @@ export default function Item({ label, onClick, icon: Icon, id, active, documentI
                 <ChavronIcon className='h-4 w-4 shrink-0 text-muted-foreground/50' />
             </div>)}
             {documentIcon ? (<div className='shrink-0 mr-2 text-[18px]'>{documentIcon}</div>) : (
-                <Icon className='shrink-0 h-[18px] mr-2 text-muted-foreground' />
+                <Icon className='shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground' />
             )}
             <span className='truncate'>
 

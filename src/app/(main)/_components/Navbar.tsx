@@ -10,6 +10,7 @@ import { MenuIcon } from 'lucide-react';
 import Title from './Title';
 import Banner from './Banner';
 import Menu from './Menu';
+import Publish from './Publish';
 
 
 
@@ -41,7 +42,7 @@ export default function Navbar({ isCollasped, onResetWidth }: INavbarProps) {
 
     return (
         <>
-            <nav className='bg-background dark:bg-[#1f1f1f] px-3 py-2 w-full flex items-center gap-x-4'>
+            <nav className='bg-background dark:bg-[#1f1f1f] px-3 py-2 w-full flex items-center gap-x-4 '>
 
                 {isCollasped && (
                     <MenuIcon
@@ -55,6 +56,7 @@ export default function Navbar({ isCollasped, onResetWidth }: INavbarProps) {
                 <div className="flex items-center justify-between w-full">
                     <Title initialData={document} />
                     <div className="flex items-center gap-x-2">
+                        <Publish initialData={document} />
                         <Menu documentId={document._id} />
                     </div>
                 </div>

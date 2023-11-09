@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { ChevronLeftIcon, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from 'lucide-react'
-import { useParams, usePathname } from 'next/navigation'
+import { useParams, usePathname, useRouter } from 'next/navigation'
 import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import UserItem from './UserItem'
@@ -37,6 +37,8 @@ export default function Navigation() {
 
     const search = useSearch();
     const settings = useSettings();
+
+    const router = useRouter()
 
     useEffect(() => {
         if (isMobile) {
@@ -105,7 +107,9 @@ export default function Navigation() {
     }
 
     const handleCreate = () => {
-        const promise = create({ title: 'Untitled' })
+        const promise = create({ title: 'Untitled' }).then((documentId)=>{
+            router.push(`/documents/${documentId}`)
+        })
 
         toast.promise(promise, {
             loading: "creating a new note...",
