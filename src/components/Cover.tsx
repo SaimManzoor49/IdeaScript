@@ -36,10 +36,10 @@ export default function Cover({url,preview}:ICoverProps) {
 
   return (
     <div className={cn(
-        "relative w-full h-[35vh] group ",
+        "relative w-full h-[35vh] group  ",
         !url && 'h-[12vh]',
         url && 'bg-muted',
-        !preview && 'top-14'
+        !preview && 'top'
     )}>
         {!!url && (
             <Image 
