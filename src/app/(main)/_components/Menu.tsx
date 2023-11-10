@@ -63,6 +63,6 @@ export default function Menu({documentId}:IMenuProps) {
 }
 
 
-Menu.Skeleton = function(){
+Menu.Skeleton = function MenuSkeleton(){
     return <Skeleton className='h-10 w-10' />
 }
