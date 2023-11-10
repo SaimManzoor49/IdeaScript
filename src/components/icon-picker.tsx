@@ -33,6 +33,7 @@ export default function IconPicker({onChange,children,asChild}:IIconPickerProps)
             height={350}
             theme={theme}
             onEmojiClick={ (data)=>onChange(data.emoji)}
+            
             />
         </PopoverContent>
     </Popover>

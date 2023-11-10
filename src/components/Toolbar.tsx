@@ -87,12 +87,14 @@ export default function Toolbar({ initialData, preview }: IToolbarProps) {
             )}
             <div className="opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
                 {!initialData.icon && !preview && (
-                    <IconPicker asChild onChange={onIconSelect}>
+                    <span className='z-[99999]'>
+                    <IconPicker asChild onChange={onIconSelect} >
                         <Button className='text-muted-foreground text-xs' variant={'outline'} size={'sm'}>
                             <Smile className='h-4 w-4 pr-2' />
                             Add icon
                         </Button>
                     </IconPicker>
+                    </span>
                 )}
                 {!initialData.coverImage && !preview && (
                     <Button className='text-muted-foreground text-xs' variant={'outline'} size={'sm'} onClick={coverImage.onOpen} >
