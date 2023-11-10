@@ -36,16 +36,17 @@ export default function Cover({url,preview}:ICoverProps) {
 
   return (
     <div className={cn(
-        "relative w-full h-[35vh] group",
+        "relative w-full h-[35vh] group ",
         !url && 'h-[12vh]',
-        url && 'bg-muted'
+        url && 'bg-muted',
+        !preview && 'top-14'
     )}>
         {!!url && (
             <Image 
             src={url}
             fill
             alt='cover'
-            className='object-cover -z-'
+            className='object-cover'
             />
         )}
 

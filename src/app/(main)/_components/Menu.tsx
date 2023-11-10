@@ -43,7 +43,7 @@ export default function Menu({documentId}:IMenuProps) {
   return (
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
-            <Button size={'sm'}>  {/* dark-bg- */}
+            <Button size={'sm'} variant={'secondary'}> 
                 <MoreHorizontal className='h-4 w-4' />
             </Button>
         </DropdownMenuTrigger>
